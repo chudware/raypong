@@ -12,3 +12,5 @@ cd raypong
 dotnet restore
 dotnet run
 ```
+
+![screenshot](/assets/screenshot.png?raw=true "screenshot")
