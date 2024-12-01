@@ -1,21 +1,14 @@
-# _Minecraft UI recreation_
+# Raypong
 
-Pixel perfect recreation of Minecraft's UI from 2011.
+## Goals:
 
-## Tech:
-
-- JavaScript
-- Tauri
-
-## Installation:
+- Practice making classes and inheritance
+- Improve structuring projects
+- Learn collision detection
+- Have fun with Raylib!
 
 ```sh
-gh repo clone chudware/minecraftJS
-cd minecraftJS
-yarn install
-```
-
-## Run:
-```sh
-yarn tauri dev
+cd raypong
+dotnet restore
+dotnet run
 ```
