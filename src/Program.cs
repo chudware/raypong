@@ -8,7 +8,7 @@ class Program
     {
         RL.InitAudioDevice();
         int ScreenWidth = 1280;
-        int ScreenHeight = 720;
+        int ScreenHeight = 960;
         RL.InitWindow(ScreenWidth, ScreenHeight, "Raypong");
         RL.SetTargetFPS(60);
         Ball ball = new();
@@ -37,13 +37,8 @@ class Program
         Sound pad_hit = RL.LoadSound("assets/click.wav");
         Background bg = new();
 
-        while (!RL.WindowShouldClose())
+        void checkCollision()
         {
-            RL.BeginDrawing();
-            ball.Update();
-            player.Update();
-            cpu.Update();
-
             if (RL.CheckCollisionCircleRec(new Vector2(ball.x, ball.y), ball.radius, new Rectangle(player.x, player.y, player.width, player.height)))
             {
                 ball.speed_x *= -1;
@@ -54,11 +49,17 @@ class Program
                 ball.speed_x *= -1;
                 RL.PlaySound(pad_hit);
             }
+        }
 
+        while (!RL.WindowShouldClose())
+        {
+            RL.BeginDrawing();
+            ball.Update();
+            player.Update();
+            cpu.Update();
+            checkCollision();
             RL.ClearBackground(Color.SkyBlue);
             bg.Draw();
-            RL.DrawLine(64 + 1, 0, 64 + 1, ScreenHeight, Color.Black);
-            RL.DrawLine(ScreenWidth - 64, 0, ScreenWidth - 64 - 1, ScreenHeight, Color.Black);
             ball.Draw();
             player.Draw();
             cpu.Draw();

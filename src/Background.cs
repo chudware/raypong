@@ -20,6 +20,9 @@ namespace raypong.src
                     RL.DrawTexture(inner, x * outlineWidth - outlineWidth, y * outlineHeight + outlineHeight, Color.White);
                     RL.DrawTexture(outline, outlineWidth - outlineWidth, y * outlineHeight + outlineHeight, Color.White);
                     RL.DrawTexture(outline, RL.GetScreenWidth() - outlineWidth, y * outlineHeight + outlineHeight, Color.White);
+                    RL.DrawTexture(outline, x * outlineWidth - outlineWidth, outlineHeight - outlineHeight, Color.White);   
+                    RL.DrawTexture(outline, x * outlineWidth - outlineWidth, RL.GetScreenHeight() - outlineHeight, Color.White);
+                    //RL.DrawTexture(statbg, 0, 0, Color.White);
                 }
             }
         }
